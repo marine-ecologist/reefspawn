@@ -1,0 +1,36 @@
+Package: reefspawn
+Title: Community scale simulations of coral reproductive output
+Version: 0.0.0.9000
+Authors@R: 
+    person("George", "Roff", , "george.roff@csiro.au", role = c("aut", "cre"))
+Description: Functions to scale coral reproductive output and spawning in Indo-Pacific corals
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+URL: https://marine-ecologist.github.io/reefspawn
+Imports: 
+    brms,
+    dplyr,
+    forcats,
+    ggplot2,
+    magrittr,
+    packcircles,
+    patchwork,
+    purrr,
+    scales,
+    sf,
+    tibble,
+    tictoc,
+    tidyr,
+    tmap,
+    usethis
+Depends: 
+    R (>= 3.5)
+LazyData: true
+VignetteBuilder: quarto
+BuildVignettes: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    quarto

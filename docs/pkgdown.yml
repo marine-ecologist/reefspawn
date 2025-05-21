@@ -1,0 +1,11 @@
+pandoc: 3.6.4
+pkgdown: 2.1.3.9000
+pkgdown_sha: f950aed41af49c732ba7884d0806c3641a7b94b3
+articles:
+  brms: brms.html
+  index: index.html
+  workflow: workflow.html
+last_built: 2025-05-20T15:27Z
+urls:
+  reference: https://marine-ecologist.github.io/reefspawn/reference
+  article: https://marine-ecologist.github.io/reefspawn/articles
