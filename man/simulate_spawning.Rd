@@ -4,7 +4,7 @@
 \alias{simulate_spawning}
 \title{Simulate Spawning Output per Coral Colony}
 \usage{
-simulate_spawning(populations, setplot, seed, quiet = TRUE, plot = FALSE)
+simulate_spawning(populations, setplot, seed, quiet = TRUE, plot = FALSE, ...)
 }
 \arguments{
 \item{populations}{An \code{sf} object containing colony data with \code{species}, \code{width}, and \code{area} columns.}

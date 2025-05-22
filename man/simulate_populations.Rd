@@ -15,7 +15,8 @@ simulate_populations(
   seed = NULL,
   quiet = TRUE,
   plot = FALSE,
-  interactive = FALSE
+  interactive = FALSE,
+  ...
 )
 }
 \arguments{

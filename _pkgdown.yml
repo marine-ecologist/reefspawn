@@ -48,6 +48,8 @@ navbar:
         href: articles/workflow.html
       - text: 2. Model parameterisation
         href: articles/brms.html
+      - text: 3. Experimental results
+        href: articles/experimental.html
 
     lightswitch:
       icon: fa-sun

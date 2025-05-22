@@ -47,7 +47,6 @@ All data sourced from Lizard Island corals via [Álvarez-Noriega et al 2016](htt
 
 Main data available with package as `coralsize`:
 
-
 ```{r}
 #| class-source: fold-hide
 #| message: false
@@ -142,7 +141,7 @@ ggplot() + theme_bw() + facet_wrap(~species, scales = "free") +
 
 ## ii. Polyp-level fecundity
 
-Predict the total number of oocytes per species * size:
+Predict the total number of oocytes per species \* size:
 
 ```{r}
 #| eval: false
@@ -234,8 +233,7 @@ ggplot() + theme_bw() + facet_wrap(~growthform, scales="free_y") +
 
 ## iv. Colony-level polyp density
 
-Predict the probability of density of polyps per cm^2 per species:
-
+Predict the probability of density of polyps per cm\^2 per species:
 
 ```{r}
 #| eval: false
@@ -343,7 +341,7 @@ ggplot() + theme_bw() + facet_wrap(~growthform, scales="free_x") +
 
 # 2. Simulate colonies
 
-Combine vars to get total output per colony * species (`data.table` for predictions for speed):
+Combine vars to get total output per colony \* species (`data.table` for predictions for speed):
 
 ```{r}
 #| class-source: fold-hide

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(beta_dist)
+export(calculate_egg_densities)
 export(coralsim)
 export(map_populations)
 export(polyp_density_data)
