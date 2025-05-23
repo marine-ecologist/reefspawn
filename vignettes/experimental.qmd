@@ -925,13 +925,14 @@ posterior_cumulative |>
 
 p <- (a + ggtitle("") | b + ggtitle("") | plot_c + ggtitle("") | tileplot_a + ggtitle("") | tileplot_b + ggtitle(""))
 
-ggsave("/Users/rof011/reefspawn/code/patchwork_plot.png", plot = p, width = 10, height = 2, units = "in", dpi = 300)
+ggsave("/Users/rof011/reefspawn/code/patchwork_plot.png", plot = p, width = 50, height = 5, units = "in", dpi = 300, limitsize = FALSE)
 
-knitr::include_graphics("/Users/rof011/reefspawn/code/patchwork_plot.png")
+#knitr::include_graphics("/Users/rof011/reefspawn/code/patchwork_plot.png")
 
 library(patchwork)
 
 ```
+
 
 
 ![](images/Figure-1-main.png)
