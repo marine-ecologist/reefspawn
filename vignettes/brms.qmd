@@ -12,9 +12,18 @@ execute:
 editor: visual
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+::: cell
+```{=html}
+<style>
+  code, pre {
+    font-size: 65%;
+    color:darkgrey;
+  }
+</style>
 ```
+:::
+
 
 ```{r}
 #| eval: true
@@ -32,11 +41,7 @@ sp_order <- c("Acropora hyacinthus", "Acropora cytherea",
               "Goniastrea pectinata", "Goniastrea retiformis")
 
 
-sp_pal <- c("Acropora hyacinthus" = "#50676c", "Acropora cytherea" = "#3a6c8e",
-  "Acropora intermedia" = "#2c3687", "Acropora robusta" = "#7b8ca8",  
-  "Acropora spathulata" = "#98a062", "Acropora millepora" = "#665a43", "Acropora nasuta" =  "#48642f",    
-  "Acropora humilis" = "#824b3b", "Acropora cf. digitifera" = "#a47c73", 
-  "Goniastrea pectinata" = "#999999", "Goniastrea retiformis"= "#bfbfbf")
+sp_pal <- sp_pal()
 
 
 ```

@@ -2,6 +2,14 @@
 "_PACKAGE"
 
 ## usethis namespace: start
-#' @importFrom tibble tibble
+#' @importFrom stats density
+#' @importFrom stats model.matrix
+#' @importFrom stats rbeta
+#' @importFrom stats rbinom
+#' @importFrom stats rgamma
+#' @importFrom stats rlnorm
+#' @importFrom stats rpois
+#' @importFrom stats sd
+#' @importFrom stats setNames
 ## usethis namespace: end
 NULL

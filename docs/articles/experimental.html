@@ -18,6 +18,7 @@
 <link href="experimental_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
 <link href="experimental_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
 <script src="experimental_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Experimental results">
+<meta property="og:image" content="https://marine-ecologist.github.io/reefspawn/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -38,11 +39,19 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/workflow.html">1. Reefspawn Workflow</a></li>
-    <li><a class="dropdown-item" href="../articles/brms.html">2. Model parameterisation</a></li>
-    <li><a class="dropdown-item" href="../articles/experimental.html">3. Experimental results</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-methods" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Methods</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-methods">
+<li><a class="dropdown-item" href="../articles/index.html">reefspawn intro</a></li>
+    <li><a class="dropdown-item" href="../articles/workflow.html">i. Initialise reefspawn</a></li>
+    <li><a class="dropdown-item" href="../articles/brms.html">ii. Model parameterisation</a></li>
+    <li><a class="dropdown-item" href="../articles/experimental.html">iii. Experimental bleaching results</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-simulations" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Simulations</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-simulations">
+<li><a class="dropdown-item" href="../articles/coralbleaching.html">1) Coral bleaching</a></li>
+    <li><a class="dropdown-item" href="../articles/allee.html">2) Allee effects (part i)</a></li>
   </ul>
 </li>
       </ul>
@@ -67,8 +76,7 @@
 </nav><div class="container template-quarto">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-
-      <h1>Experimental results</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Experimental results</h1>
 
 
 
@@ -162,7 +170,7 @@
 <span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">species</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html" class="external-link">geom_violin</a></span><span class="op">(</span></span>
@@ -184,7 +192,9 @@
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Egg size (µm)"</span>, title <span class="op">=</span> <span class="st">"Egg size by Treatment"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"navajowhite2"</span>, <span class="st">"paleturquoise"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">a</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure><p><img src="experimental_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
@@ -340,7 +350,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">species</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html" class="external-link">geom_violin</a></span><span class="op">(</span></span>
@@ -361,7 +371,9 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>    stat <span class="op">=</span> <span class="st">"identity"</span>, width <span class="op">=</span> <span class="fl">0.2</span>, alpha <span class="op">=</span> <span class="fl">0.7</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Reproductive output (n per cm2)"</span>, title <span class="op">=</span> <span class="st">"Reproductive output by Treatment"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"navajowhite2"</span>, <span class="st">"paleturquoise"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"navajowhite2"</span>, <span class="st">"paleturquoise"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">b</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure><p><img src="experimental_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
@@ -484,7 +496,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">onboard_cultures</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="va">species</span>, <span class="va">condition</span><span class="op">)</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"treatment"</span>, <span class="st">"species"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="va">plot_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">species</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html" class="external-link">geom_ribbon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">newdata_quad</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">time</span>, ymin <span class="op">=</span> <span class="va">Q2.5</span>, ymax <span class="op">=</span> <span class="va">Q97.5</span>, fill <span class="op">=</span> <span class="va">condition</span><span class="op">)</span>,</span>
@@ -502,7 +514,10 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"navajowhite"</span>, <span class="st">"paleturquoise"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"navajowhite3"</span>, <span class="st">"paleturquoise3"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html" class="external-link">coord_cartesian</a></span><span class="op">(</span>ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2500</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html" class="external-link">coord_cartesian</a></span><span class="op">(</span>ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2500</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">plot_c</span></span></code></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure><p><img src="experimental_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
@@ -595,24 +610,9 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>  data <span class="op">=</span> <span class="va">tiles_grouped</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">days</span> <span class="op">==</span> <span class="st">"5 days"</span><span class="op">)</span>,</span>
 <span>  family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/family.html" class="external-link">gaussian</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  chains <span class="op">=</span> <span class="fl">4</span>, cores <span class="op">=</span> <span class="fl">4</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-using C compiler: ‘Apple clang version 17.0.0 (clang-1700.0.13.3)’
-using SDK: ‘MacOSX15.4.sdk’
-clang -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/Rcpp/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppEigen/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppEigen/include/unsupported"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/BH/include" -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/StanHeaders/include/src/"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/StanHeaders/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppParallel/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/rstan/include" -DEIGEN_NO_DEBUG  -DBOOST_DISABLE_ASSERTS  -DBOOST_PENDING_INTEGER_LOG2_HPP  -DSTAN_THREADS  -DUSE_STANC3 -DSTRICT_R_HEADERS  -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION  -D_HAS_AUTO_PTR_ETC=0  -include '/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp'  -D_REENTRANT -DRCPP_PARALLEL_USE_TBB=1   -I/opt/R/arm64/include    -fPIC  -O3 -mtune=native -march=native -c foo.c -o foo.o
-In file included from &lt;built-in&gt;:1:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp:22:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppEigen/include/Eigen/Dense:1:
-In file included from /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppEigen/include/Eigen/Core:19:
-/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:679:10: fatal error: 'cmath' file not found
-  679 | #include &lt;cmath&gt;
-      |          ^~~~~~~
-1 error generated.
-make: *** [foo.o] Error 1</code></pre>
-</div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># saveRDS(tiles_counts_a, "/Users/rof011/reefspawn/code/tiles_counts_a.rds")</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># saveRDS(tiles_counts_a, "/Users/rof011/reefspawn/code/tiles_counts_a.rds")</span></span>
 <span></span>
 <span><span class="va">tiles_counts_a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html" class="external-link">readRDS</a></span><span class="op">(</span><span class="st">"/Users/rof011/reefspawn/code/tiles_counts_a.rds"</span><span class="op">)</span></span>
 <span></span>
@@ -655,7 +655,7 @@ make: *** [foo.o] Error 1</code></pre>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://paulbuerkner.com/brms/reference/hypothesis.brmsfit.html" class="external-link">hypothesis</a></span><span class="op">(</span><span class="va">tiles_counts_a</span>, <span class="st">"treatmentunimpacted = 0"</span><span class="op">)</span></span></code></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>Hypothesis Tests for class b:
@@ -675,7 +675,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 </section><section class="level2"><h3 id="larval-recruitment-3-months">Larval recruitment (3 months)<a class="anchor" aria-label="anchor" href="#larval-recruitment-3-months"></a>
 </h3>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#| class-source: fold-hide</span></span>
 <span><span class="co">#| message: false</span></span>
 <span><span class="co">#| warning: false</span></span>
@@ -734,7 +734,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://paulbuerkner.com/brms/reference/hypothesis.brmsfit.html" class="external-link">hypothesis</a></span><span class="op">(</span><span class="va">tiles_counts_b</span>, <span class="st">"treatmentunimpacted = 0"</span><span class="op">)</span></span></code></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>Hypothesis Tests for class b:
@@ -764,7 +764,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 •   &lt;1 = negative effect (impacted &lt; unimpacted)
 •   &gt;1 = positive effect (impacted &gt; unimpacted)</code></pre>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">##############################</span></span>
 <span><span class="co">##### fm_egg_size</span></span>
 <span><span class="co">##############################</span></span>
@@ -922,12 +922,12 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e55cdb31b295d8d4c94b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e55cdb31b295d8d4c94b">{"x":{"filter":"none","vertical":false,"data":[["1. oocyte size","1. oocyte size","2. reproductive biomass","2. reproductive biomass","3. larval development","3. larval development","4. larval settlement","5. larval recruitment"],["hyacinthus","spathulata","hyacinthus","spathulata","hyacinthus","spathulata","pooled","pooled"],[0,-0.2,0.4,2.2,-0.1,0.6,1.4,0.9],[-0.2,-0.4,-8.6,0.1,-0.6,-0.3,-0.7,-0.4],[0.4,0.1,9.199999999999999,14.1,0.7,2.3,9.699999999999999,3.1]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>stage<\/th>\n      <th>species<\/th>\n      <th>effect_size<\/th>\n      <th>effect_lower<\/th>\n      <th>effect_upper<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"name":"stage","targets":0},{"name":"species","targets":1},{"name":"effect_size","targets":2},{"name":"effect_lower","targets":3},{"name":"effect_upper","targets":4}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[0]; $(row).css({'background-color':value == \"1. oocyte size\" ? \"#E6E6E6\" : value == \"2. reproductive biomass\" ? \"#DADADA\" : value == \"3. larval development\" ? \"#CECECE\" : value == \"4. larval settlement\" ? \"#C1C1C1\" : value == \"5. larval recruitment\" ? \"#B3B3B3\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-7453237c1975d70e0ed1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7453237c1975d70e0ed1">{"x":{"filter":"none","vertical":false,"data":[["1. oocyte size","1. oocyte size","2. reproductive biomass","2. reproductive biomass","3. larval development","3. larval development","4. larval settlement","5. larval recruitment"],["hyacinthus","spathulata","hyacinthus","spathulata","hyacinthus","spathulata","pooled","pooled"],[0,-0.2,0.4,2.2,-0.1,0.6,1.4,0.9],[-0.2,-0.4,-8.6,0.1,-0.6,-0.3,-0.7,-0.4],[0.4,0.1,9.199999999999999,14.1,0.7,2.3,9.699999999999999,3.1]],"container":"<table class=\"stripe hover compact\">\n  <thead>\n    <tr>\n      <th>stage<\/th>\n      <th>species<\/th>\n      <th>effect_size<\/th>\n      <th>effect_lower<\/th>\n      <th>effect_upper<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"name":"stage","targets":0},{"name":"species","targets":1},{"name":"effect_size","targets":2},{"name":"effect_lower","targets":3},{"name":"effect_upper","targets":4}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[0]; $(row).css({'background-color':value == \"1. oocyte size\" ? \"#E6E6E6\" : value == \"2. reproductive biomass\" ? \"#DADADA\" : value == \"3. larval development\" ? \"#CECECE\" : value == \"4. larval settlement\" ? \"#C1C1C1\" : value == \"5. larval recruitment\" ? \"#B3B3B3\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb29"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">posterior_prediction_table_full</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">posterior_prediction_table</span>, <span class="va">blankdf</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">posterior_predicts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>  </span>
@@ -952,7 +952,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#ggsave(posterior_predicts,filename="/Users/rof011/reefspawn/code/posterior_predicts.pdf", width=6, height=2)</span></span></code></pre></div>
 </details>
 </div>
@@ -963,7 +963,7 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 \text{Cumulative effect} = \displaystyle\prod_{i=1}^n \left( \frac{\text{impacted}_i}{\text{unimpacted}_i} \right) - 1
 </annotation></semantics></math></p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="downlit sourceCode r">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">posterior_prediction_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span></span>
 <span>  <span class="va">fm_egg_size_posterior</span>,</span>
 <span>  <span class="va">fm_repro_posterior</span>,</span>
@@ -1093,14 +1093,33 @@ Posterior probabilities of point hypotheses assume equal prior probabilities.</c
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
 </details><div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-2562e034561ad4256ab2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2562e034561ad4256ab2">{"x":{"filter":"none","vertical":false,"data":[["hyacinthus","spathulata"],[1,0.8],[1.4,3.2],[0.9,1.6],[2.4,2.4],[1.9,1.9],[0.2,2.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>species<\/th>\n      <th>oocyte_size<\/th>\n      <th>reproductive_biomass<\/th>\n      <th>larval_development<\/th>\n      <th>larval_settlement<\/th>\n      <th>larval_recruitment<\/th>\n      <th>cumulative_effect_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"autoWidth":true,"dom":"t","columnDefs":[{"className":"dt-center","targets":"_all"},{"name":"species","targets":0},{"name":"oocyte_size","targets":1},{"name":"reproductive_biomass","targets":2},{"name":"larval_development","targets":3},{"name":"larval_settlement","targets":4},{"name":"larval_recruitment","targets":5},{"name":"cumulative_effect_size","targets":6}],"order":[],"orderClasses":false,"lengthMenu":[5,10,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[0]; $(row).css({'background-color':value == \"hyacinthus\" ? \"#E6E6E6\" : value == \"spathulata\" ? \"#CCCCCC\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a4ad55696e1166d6eded" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a4ad55696e1166d6eded">{"x":{"filter":"none","vertical":false,"data":[["hyacinthus","spathulata"],[1,0.8],[1.4,3.2],[0.9,1.6],[2.4,2.4],[1.9,1.9],[0.2,2.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>species<\/th>\n      <th>oocyte_size<\/th>\n      <th>reproductive_biomass<\/th>\n      <th>larval_development<\/th>\n      <th>larval_settlement<\/th>\n      <th>larval_recruitment<\/th>\n      <th>cumulative_effect_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"autoWidth":true,"dom":"t","columnDefs":[{"className":"dt-center","targets":"_all"},{"name":"species","targets":0},{"name":"oocyte_size","targets":1},{"name":"reproductive_biomass","targets":2},{"name":"larval_development","targets":3},{"name":"larval_settlement","targets":4},{"name":"larval_recruitment","targets":5},{"name":"cumulative_effect_size","targets":6}],"order":[],"orderClasses":false,"lengthMenu":[5,10,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[0]; $(row).css({'background-color':value == \"hyacinthus\" ? \"#E6E6E6\" : value == \"spathulata\" ? \"#CCCCCC\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#| class-source: fold-hide</span></span>
+<span><span class="co">#| message: false</span></span>
+<span><span class="co">#| warning: false</span></span>
+<span><span class="co">#| fig-width: 10</span></span>
+<span><span class="co">#| fig-height: 2</span></span>
+<span><span class="co">#| </span></span>
+<span></span>
+<span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">|</span> <span class="va">b</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">|</span> <span class="va">plot_c</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">|</span> <span class="va">tileplot_a</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">|</span> <span class="va">tileplot_b</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="st">"/Users/rof011/reefspawn/code/patchwork_plot.png"</span>, plot <span class="op">=</span> <span class="va">p</span>, width <span class="op">=</span> <span class="fl">50</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span>, dpi <span class="op">=</span> <span class="fl">300</span>, limitsize <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#knitr::include_graphics("/Users/rof011/reefspawn/code/patchwork_plot.png")</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span></code></pre></div>
+</details>
+</div>
+<p><img src="images/Figure-1-main.png"></p>
 <pre><code>•   1 = no effect (impacted = unimpacted)
 •   &lt;1 = negative effect (impacted &lt; unimpacted)
 •   &gt;1 = positive effect (impacted &gt; unimpacted)</code></pre>
-<p><img src="images/Figure-1-main.png"></p>
 
 </section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

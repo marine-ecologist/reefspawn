@@ -8,10 +8,6 @@ template:
   bootswatch: cosmo
   light-switch: true
 
-home:
-  title: "reefspawn Project"
-  description: "reefspawn: an R package for simulating coral spawning"
-
 authors:
   George Roff:
     href: https://github.com/marine.ecologist/
@@ -23,6 +19,7 @@ navbar:
     left:
       - intro
       - reference
+      - methods
       - articles
     right:
       - search
@@ -41,15 +38,25 @@ navbar:
       icon: fa-github
       href: https://github.com/marine-ecologist/reefspawn
 
-    articles:
-      text: Articles
+    methods:
+      text: Methods
       menu:
-      - text: 1. Reefspawn Workflow
-        href: articles/workflow.html
-      - text: 2. Model parameterisation
-        href: articles/brms.html
-      - text: 3. Experimental results
-        href: articles/experimental.html
+        - text: reefspawn intro
+          href: articles/index.html
+        - text: i. Initialise reefspawn
+          href: articles/workflow.html
+        - text: ii. Model parameterisation
+          href: articles/brms.html
+        - text: iii. Experimental bleaching results
+          href: articles/experimental.html
+
+    articles:
+      text: Simulations
+      menu:
+        - text: 1) Coral bleaching
+          href: articles/coralbleaching.html
+        - text: 2) Allee effects (part i)
+          href: articles/allee.html
 
     lightswitch:
       icon: fa-sun
@@ -65,4 +72,3 @@ navbar:
         - text: Auto
           theme: auto
           icon: fa-adjust
-

@@ -8,14 +8,13 @@ simulate_populations(
   setplot,
   size,
   community,
-  brms = posterior_coeffs_sizedistribution,
+  posterior = coralsizepredictions,
   return = "df",
   algorithm = "repel",
   ndraws = 20000,
+  maxiter = 100,
   seed = NULL,
   quiet = TRUE,
-  plot = FALSE,
-  interactive = FALSE,
   ...
 )
 }
@@ -26,7 +25,7 @@ simulate_populations(
 
 \item{community}{A data frame containing \code{species} and \code{aerial} (m²) coverage values.}
 
-\item{brms}{A \code{brmsfit} object used to generate posterior predictions of colony size by species.}
+\item{posterior}{A return from posterior_coral_predict of colony size by species.}
 
 \item{return}{Character. \code{"df"} returns the raw colony list; \code{"sf"} returns spatial polygons. Default: \code{"df"}.}
 
@@ -37,10 +36,6 @@ simulate_populations(
 \item{seed}{Optional integer for reproducibility of sampling and layout.}
 
 \item{quiet}{verbose}
-
-\item{plot}{Logical. If \code{TRUE}, renders a \code{tmap} plot of the resulting layout. Default: \code{FALSE}.}
-
-\item{interactive}{Logical. If \code{TRUE}, renders a \code{tmap} interactive plot of the resulting layout. Default: \code{FALSE}.}
 }
 \value{
 Either a data frame of simulated colonies (\code{df}) or an \code{sf} object of spatial polygons (\code{sf}) depending on \code{return}.

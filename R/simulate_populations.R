@@ -6,13 +6,11 @@
 #' @param setplot An `sf` polygon representing the area in which colonies will be positioned.
 #' @param size A data frame containing `species` and size distribution (`area` or `width`).
 #' @param community A data frame containing `species` and `aerial` (m²) coverage values.
-#' @param brms A `brmsfit` object used to generate posterior predictions of colony size by species.
+#' @param posterior A return from posterior_coral_predict of colony size by species.
 #' @param return Character. `"df"` returns the raw colony list; `"sf"` returns spatial polygons. Default: `"df"`.
 #' @param algorithm Character. `"repel"` (default) or `"progressive"` — determines the circle packing layout method.
 #' @param ndraws Integer. Number of posterior predictive draws to simulate. Default: 50000.
 #' @param seed Optional integer for reproducibility of sampling and layout.
-#' @param plot Logical. If `TRUE`, renders a `tmap` plot of the resulting layout. Default: `FALSE`.
-#' @param interactive Logical. If `TRUE`, renders a `tmap` interactive plot of the resulting layout. Default: `FALSE`.
 #' @param quiet verbose
 #'
 #' @return Either a data frame of simulated colonies (`df`) or an `sf` object of spatial polygons (`sf`) depending on `return`.
@@ -31,9 +29,9 @@
 #'
 #' @export
 
-simulate_populations <- function(setplot, size, community, brms=posterior_coeffs_sizedistribution, return = "df",
-                                 algorithm = "repel", ndraws = 20000, seed = NULL,
-                                 quiet = TRUE, plot = FALSE, interactive=FALSE, ...) {
+simulate_populations <- function(setplot, size, community, posterior = coralsizepredictions, return = "df",
+                                 algorithm = "repel", ndraws = 20000, maxiter = 100, seed = NULL,
+                                 quiet = TRUE, ...) {
 
   t0 <- tictoc::tic(quiet = TRUE)
 
@@ -42,29 +40,11 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
   }
 
 
-  posteriordraws <- posterior_predict(brm_polyp_density, ndraws=ndraws, newdata = data.frame(species=unique(coralsize$species)))
-
-  # generate predictions in long_format
-  preds <- posteriordraws |>
-    as.data.frame() |>
-    dplyr::filter_if(is.numeric, dplyr::all_vars(. >= 0)) |>
-    magrittr::set_colnames(unique(coralsize$species)) |>
-    tidyr::pivot_longer(everything(), names_to="species", values_to="width") |>
-    dplyr::arrange(species) |>
-    dplyr::mutate(species=as.factor(species)) |>
-    mutate(species = fct_recode(species,  "Acropora digitifera" = "Acropora cf. digitifera")) |>
-    dplyr::mutate(area=pi*((width/2)^2)) |>
-    dplyr::group_by(species) |>
-    dplyr::mutate(cumulative_area = cumsum(area))
-
-
   aerial_coverage <- community |>
     dplyr::select(species, aerial) |>
     mutate(aerial = as.numeric(aerial)*10000) # convert from m2 units to cm2
 
-  coral_list_initial <- dplyr::left_join(preds, aerial_coverage, by="species")
-
-
+  coral_list_initial <- dplyr::left_join(posterior, aerial_coverage, by="species")
 
   coral_list <- coral_list_initial %>%
     dplyr::mutate(drop=ifelse(as.numeric(cumulative_area) < (as.numeric(aerial)), 1, NA)) %>%
@@ -78,6 +58,10 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
       elapsed <- tictoc::toc(quiet = TRUE)
       print(paste0(elapsed$callback_msg, " - simulate_populations()"))
     }
+
+    coral_list <- coral_list_initial %>%
+      dplyr::mutate(status="unbleached")
+
     return(coral_list)
   }
 
@@ -116,8 +100,9 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
 
   if (algorithm=="repel"){
   coral_output <- packcircles::circleRepelLayout(spatial.population.xyz |> dplyr::select(x, y, overlaparea),
-                                                 xlim = c(0, sf::st_bbox(sf_plot)[3]),
-                                                 ylim = c(0, sf::st_bbox(sf_plot)[4]),
+                                                 xlim = c(sf::st_bbox(setplot)[1], sf::st_bbox(setplot)[3]),
+                                                 ylim = c(sf::st_bbox(setplot)[2], sf::st_bbox(setplot)[4]),
+                                                 maxiter = maxiter,
                                                  xysizecols = 1:3,
                                                  wrap=FALSE)
 
@@ -137,7 +122,8 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
     dplyr::bind_cols(spatial.population.xyz |> dplyr::select(-id, aerial, zindex_id, cumulative_area))
 
   coral_output <- coral_output |>
-    dplyr::arrange((as.factor(species)))
+    dplyr::arrange((as.factor(species))) |>
+    dplyr::mutate(status="unbleached")
 
   } else if (algorithm=="progressive") {
 
@@ -149,8 +135,8 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
     coral_layout <- packcircles::circleProgressiveLayout(spatial.population.xyz$overlaparea)
 
     # Step 2: Normalize x/y into bounding box
-    xlim <- c(0, sf::st_bbox(sf_plot)[3])
-    ylim <- c(0, sf::st_bbox(sf_plot)[4])
+    xlim <- c(0, sf::st_bbox(setplot)[3])
+    ylim <- c(0, sf::st_bbox(setplot)[4])
 
     coral_layout$x <- scales::rescale(coral_layout$x, to = xlim)
     coral_layout$y <- scales::rescale(coral_layout$y, to = ylim)
@@ -177,7 +163,8 @@ simulate_populations <- function(setplot, size, community, brms=posterior_coeffs
           dplyr::slice(layout_df$id) |>
           dplyr::select(-id, aerial, zindex_id, cumulative_area)
       ) |>
-      dplyr::arrange(as.factor(species))
+      dplyr::arrange(as.factor(species)) |>
+      dplyr::mutate(status="unbleached")
 
   }
 

@@ -19,10 +19,15 @@ computes derived width from area, and assigns species-level growthforms."></head
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/workflow.html">1. Reefspawn Workflow</a></li>
-    <li><a class="dropdown-item" href="../articles/brms.html">2. Model parameterisation</a></li>
-    <li><a class="dropdown-item" href="../articles/experimental.html">3. Experimental results</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-methods" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Methods</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-methods"><li><a class="dropdown-item" href="../articles/workflow.html">i. Initialise reefspawn</a></li>
+    <li><a class="dropdown-item" href="../articles/brms.html">ii. Model parameterisation</a></li>
+    <li><a class="dropdown-item" href="../articles/experimental.html">iii. Experimental bleaching results</a></li>
+  </ul></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-simulations" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Simulations</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-simulations"><li><a class="dropdown-item" href="../articles/coralbleaching.html">1) Coral bleaching simulations</a></li>
+    <li><a class="dropdown-item" href="../articles/allee.html">2) Allee effects</a></li>
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -71,7 +76,7 @@ computes derived width from area, and assigns species-level growthforms.</p>
 <ul><li><p><code>fecundity</code> includes colony-level reproductive data.</p></li>
 <li><p><code>coralsize</code> contains colony size structure by species, with growthform classification.</p></li>
 <li><p>Width is computed as <code>sqrt(area_cm2 / pi) * 2</code>.</p></li>
-<li><p>Growthforms are assigned using <code><a href="https://forcats.tidyverse.org/reference/fct_recode.html" class="external-link">fct_recode()</a></code> based on species identity.</p></li>
+<li><p>Growthforms are assigned using <code>fct_recode()</code> based on species identity.</p></li>
 </ul></div>
 
     <div class="section level2">

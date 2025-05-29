@@ -31,7 +31,6 @@ simulate_spawning <- function(populations, setplot, seed, quiet=TRUE, plot = FAL
     set.seed(seed)
   }
 
-
   # 1. Polyp density per colony
   populations$polypdensity <- posterior_predict(
     brm_polyp_density,
@@ -66,7 +65,9 @@ simulate_spawning <- function(populations, setplot, seed, quiet=TRUE, plot = FAL
       reproductive_polyps = colony_polyps * sterile_proportion,
       sterile_polyps = colony_polyps * (1 - sterile_proportion),
       output = reproductive_polyps * oocytes * reproductive_probability
-    )
+    ) |>
+    mutate(output = ifelse(status=="bleached", 0, output)) |>
+    mutate(output = round(output))
 
   if (isFALSE(quiet)){
     elapsed <- tictoc::toc(quiet = TRUE)
@@ -105,39 +106,43 @@ simulate_spawning <- function(populations, setplot, seed, quiet=TRUE, plot = FAL
                                                    "Corymbose" = "Acropora spathulata",
                                                    "Digitate" = "Acropora cf. digitifera", "Digitate" = "Acropora humilis"))
 
-    # Violin plot with points: output by species
-    p1 <- ggplot2::ggplot(data = reproductiveoutput) +
-      ggplot2::geom_boxplot(
-        ggplot2::aes(x = species, y = output, fill = species),
-        linewidth = 0.3,
-        alpha = 0.8,
-        width = 0.6,
-        outliers=TRUE
-      ) +
-      ggplot2::theme_bw() +
-      ggplot2::xlab("") +
-      ggplot2::ylab("Reproductive Output") +
-      ggplot2::scale_color_manual(values = sp_pal) +
-      ggplot2::scale_fill_manual(values = sp_pal) +
-      ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust = 1)) +
-      ggplot2::scale_y_log10(labels = scales::label_comma())
+    suppressMessages(suppressWarnings({
 
-    # Scatter plot with lm fit: output by colony size
-    p2 <- ggplot2::ggplot(data = reproductiveoutput) +
-      ggplot2::facet_wrap(~growthform, ncol=2, scales="free") +
-      ggplot2::geom_point(ggplot2::aes(x = width, y = output, fill = species), alpha = 0.5, shape = 21, fill = "black", size = 0.5) +
-      ggplot2::stat_smooth(ggplot2::aes(x = width, y = output, group = species, color = species, fill = species), method = "lm", se = TRUE) +
-      ggplot2::theme_bw() +
-      ggplot2::scale_color_manual(values = sp_pal) +
-      ggplot2::scale_fill_manual(values = sp_pal) +
-      ggplot2::xlab("Colony Width (cm)") +
-      ggplot2::ylab("Reproductive Output") +
-      ggplot2::scale_y_continuous(labels = scales::label_comma())
+      # Violin plot with points: output by species
+      p1 <- ggplot2::ggplot(data = reproductiveoutput) +
+        ggplot2::geom_boxplot(
+          ggplot2::aes(x = species, y = output, fill = species),
+          linewidth = 0.3,
+          alpha = 0.8,
+          width = 0.6,
+          outliers=TRUE
+        ) +
+        ggplot2::theme_bw() +
+        ggplot2::xlab("") +
+        ggplot2::ylab("Reproductive Output") +
+        ggplot2::scale_color_manual(values = sp_pal) +
+        ggplot2::scale_fill_manual(values = sp_pal) +
+        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+        ggplot2::scale_y_log10(labels = scales::label_comma())
 
-    combined_plot <- gridExtra::grid.arrange(p1, p2, ncol = 1)
+      # Scatter plot with lm fit: output by colony size
+      p2 <- ggplot2::ggplot(data = reproductiveoutput) +
+        ggplot2::facet_wrap(~growthform, ncol=2, scales="free") +
+        ggplot2::geom_point(ggplot2::aes(x = width, y = output, fill = species), alpha = 0.5, shape = 21, fill = "black", size = 0.5) +
+        ggplot2::stat_smooth(ggplot2::aes(x = width, y = output, group = species, color = species, fill = species), method = "lm", se = TRUE) +
+        ggplot2::theme_bw() +
+        ggplot2::scale_color_manual(values = sp_pal) +
+        ggplot2::scale_fill_manual(values = sp_pal) +
+        ggplot2::xlab("Colony Width (cm)") +
+        ggplot2::ylab("Reproductive Output") +
+        ggplot2::scale_y_continuous(labels = scales::label_comma())
 
-    print(combined_plot)
+      combined_plot <- gridExtra::grid.arrange(p1, p2, ncol = 1)
 
+      grid::grid.newpage()
+      grid::grid.draw(combined_plot)
+
+    }))
   }
   return(populations)
 }

@@ -255,7 +255,8 @@ simulate_community <- function(setplot, size, ratio, ratiovar=0.2, coralcover=NU
       ncol = 1
     )
 
-    print(combined_plot)
+    grid::grid.newpage()
+    grid::grid.draw(combined_plot)
 
   }
 

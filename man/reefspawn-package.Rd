@@ -6,6 +6,8 @@
 \alias{reefspawn-package}
 \title{reefspawn: Community scale simulations of coral reproductive output}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Functions to scale coral reproductive output and spawning in Indo-Pacific corals
 }
 \seealso{

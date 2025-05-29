@@ -1,0 +1,21 @@
+---
+title: "reefspawn"
+author: "George Roff"
+date: "2025-05-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## reefspawn: an r package for quantifying reef-scale coral spawning
+
+```{r eval=FALSE}
+
+remotes::install_github("http://marine-ecologist.github.io/reefspawn/")
+
+
+```
+
+![](images/clipboard-2550092293.jpeg)

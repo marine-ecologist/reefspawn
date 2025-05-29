@@ -4,7 +4,13 @@
 \alias{map_populations}
 \title{Map Coral Populations with Species Coloring}
 \usage{
-map_populations(setplot, populations, interactive = TRUE, webgl = TRUE)
+map_populations(
+  setplot,
+  populations,
+  interactive = TRUE,
+  zoom = c(22, 32),
+  webgl = TRUE
+)
 }
 \arguments{
 \item{setplot}{An \code{sf} or \code{SpatVector} object representing the background plot layer (e.g. reef tiles).}

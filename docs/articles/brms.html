@@ -13,6 +13,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="brms_files/libs/quarto-html/popper.min.js"></script><script src="brms_files/libs/quarto-html/tippy.umd.min.js"></script><link href="brms_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="brms_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Bayesian models">
+<meta property="og:image" content="https://marine-ecologist.github.io/reefspawn/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -33,11 +34,19 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/workflow.html">1. Reefspawn Workflow</a></li>
-    <li><a class="dropdown-item" href="../articles/brms.html">2. Model parameterisation</a></li>
-    <li><a class="dropdown-item" href="../articles/experimental.html">3. Experimental results</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-methods" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Methods</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-methods">
+<li><a class="dropdown-item" href="../articles/index.html">reefspawn intro</a></li>
+    <li><a class="dropdown-item" href="../articles/workflow.html">i. Initialise reefspawn</a></li>
+    <li><a class="dropdown-item" href="../articles/brms.html">ii. Model parameterisation</a></li>
+    <li><a class="dropdown-item" href="../articles/experimental.html">iii. Experimental bleaching results</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-simulations" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Simulations</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-simulations">
+<li><a class="dropdown-item" href="../articles/coralbleaching.html">1) Coral bleaching</a></li>
+    <li><a class="dropdown-item" href="../articles/allee.html">2) Allee effects (part i)</a></li>
   </ul>
 </li>
       </ul>
@@ -62,8 +71,7 @@
 </nav><div class="container template-quarto">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-
-      <h1>Bayesian models</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Bayesian models</h1>
 
 
 
@@ -77,7 +85,15 @@
 
 
 
-    <section class="section level2"><h2 id="parameter-estimates">1. Parameter estimates<a class="anchor" aria-label="anchor" href="#parameter-estimates"></a>
+    <div class="cell">
+<style>
+  code, pre {
+    font-size: 65%;
+    color:darkgrey;
+  }
+</style>
+</div>
+<section class="section level2"><h2 id="parameter-estimates">1. Parameter estimates<a class="anchor" aria-label="anchor" href="#parameter-estimates"></a>
 </h2>
 <p>All data sourced from Lizard Island corals via <a href="https://esajournals.onlinelibrary.wiley.com/authored-by/%C3%81lvarez%E2%80%90Noriega/Mariana" class="external-link">Álvarez-Noriega et al 2016</a> and <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.4017" class="external-link">Madin et al 2023</a>.</p>
 <p>Main data available with package as <code>coralsize</code>:</p>

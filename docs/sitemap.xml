@@ -2,7 +2,9 @@
 <url><loc>https://marine-ecologist.github.io/reefspawn/404.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/LICENSE-text.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/LICENSE.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/articles/allee.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/articles/brms.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/articles/coralbleaching.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/articles/experimental.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/articles/index.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/articles/overview.html</loc></url>
@@ -10,13 +12,16 @@
 <url><loc>https://marine-ecologist.github.io/reefspawn/authors.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/index.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/beta_dist.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/calculate_allee_effects.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/calculate_egg_densities.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/calculate_intraspecific_allee_dist.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/coralsim.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/fecundity.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/index.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/map_populations.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/pipe.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/polyp_density_data.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/posterior_coral_predict.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/predict_colony_width.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/predict_oocytes.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/predict_polyp_density.html</loc></url>
@@ -24,9 +29,12 @@
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/reefspawn-package.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/sample_sterile_zone.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/setplot.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/simulate_bleaching.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/simulate_community.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/simulate_coralsize.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/simulate_populations.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/simulate_spawning.html</loc></url>
 <url><loc>https://marine-ecologist.github.io/reefspawn/reference/sp_order.html</loc></url>
+<url><loc>https://marine-ecologist.github.io/reefspawn/reference/sp_pal.html</loc></url>
 </urlset>
 

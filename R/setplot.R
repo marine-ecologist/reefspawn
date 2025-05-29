@@ -15,7 +15,7 @@
 #'
 #' @export
 
-setplot <- function(length, width, crs = 3857) {
+setplot <- function(length, width, crs = 3857, quiet = TRUE) {
   coords <- matrix(c(0, 0, length, 0, length, width, 0, width, 0, 0),
                    ncol = 2, byrow = TRUE)
 
@@ -26,8 +26,14 @@ setplot <- function(length, width, crs = 3857) {
 
   grid <- sf::st_make_grid(sf_plot, cellsize = c(1, 1), crs = crs)
 
-  cat(paste0(length, " x ", width, " m plot\n"))
-  print(sum(sf::st_area(grid)))
+
+
+  if(isFALSE(quiet)){
+    cat(paste0(length, " x ", width, " m plot\n"))
+    print(sum(sf::st_area(grid)))
+  }
 
   return(grid)
 }
+
+

@@ -4,7 +4,7 @@
 \alias{setplot}
 \title{Generate a Rectangular sf Plot Grid}
 \usage{
-setplot(length, width, crs = 3857)
+setplot(length, width, crs = 3857, quiet = TRUE)
 }
 \arguments{
 \item{length}{Numeric. Length of the plot in meters (X-dimension).}

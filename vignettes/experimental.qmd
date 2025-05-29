@@ -572,13 +572,11 @@ Estimate 0.52 \[–1.42, +0.43\]
 
 proportional effect sizes, calculated as:
 
-
 $$
 \text{Effect size} = \left( \frac{\text{impacted}}{\text{unimpacted}} \right) - 1
 $$
 
-where: 
-
+where:
 
 ```         
 •   1 = no effect (impacted = unimpacted)
@@ -912,7 +910,6 @@ posterior_cumulative |>
 
 ```
 
-
 ```{r}
 
 #| class-source: fold-hide
@@ -933,15 +930,10 @@ library(patchwork)
 
 ```
 
-
-
 ![](images/Figure-1-main.png)
-
 
 ```         
 •   1 = no effect (impacted = unimpacted)
 •   <1 = negative effect (impacted < unimpacted)
 •   >1 = positive effect (impacted > unimpacted)
 ```
-
-

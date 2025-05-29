@@ -20,6 +20,7 @@ Imports:
     purrr,
     scales,
     sf,
+    stats,
     tibble,
     tictoc,
     tidyr,
